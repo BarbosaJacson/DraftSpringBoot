@@ -16,7 +16,7 @@ public class HomeController {
     public String home(Model model) {
         // Adiciona um atributo "mensagem" ao modelo.
         // Este atributo estará disponível no seu template HTML.
-        model.addAttribute("mensagem", "Bem-vindo ao seu primeiro projeto web com Spring Boot e Thymeleaf!");
+        model.addAttribute("mensagem", "Welcome to your first web project with Spring Boot and Thymeleaf!");
         // Retorna o nome do template HTML a ser renderizado.
         // O Spring Boot procurará por "index.html" em src/main/resources/templates/
         return "index";
