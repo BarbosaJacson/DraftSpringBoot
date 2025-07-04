@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Web Page</title> <!-- Título da aba do navegador em inglês -->
+    <title>My First Web Page</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -12,20 +12,17 @@
         }
     </style>
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
-<div class="bg-white p-8 rounded-lg shadow-lg text-center max-w-md w-full">
-    <!-- AGORA DINÂMICO: O título <h1> pega o valor do atributo "tituloPagina" do controller -->
+<!-- Body agora apenas define o fundo -->
+<body class="bg-gray-100">
+<!-- O div agora ocupa 100% da largura e altura da tela
+     e centraliza seu próprio conteúdo -->
+<div class="w-full h-screen flex flex-col items-center justify-center">
     <h1 class="text-4xl font-bold text-blue-600 mb-4" th:text="${tituloPagina}">Hello, World!</h1>
-
-    <!-- O texto th:text pega o valor do atributo "mensagem" que foi passado pelo controller -->
     <p class="text-gray-700 text-lg" th:text="${mensagem}">This is a default message.</p>
-
     <p class="text-gray-500 mt-4">Your Spring Boot application is up and running!</p>
 
-    <!-- NOVO: Seção para exibir a lista de itens (do passo anterior, se você a tiver) -->
     <h2 class="text-2xl font-semibold text-gray-800 mb-3">My Objectives:</h2>
     <ul class="list-disc list-inside text-left mx-auto max-w-xs">
-        <!-- th:each iterates over each item in listaDeItens -->
         <li th:each="item : ${listaDeItens}" th:text="${item}" class="text-gray-600 py-1">List item (placeholder)</li>
     </ul>
 </div>
